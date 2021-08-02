@@ -21,28 +21,41 @@ public class Person {
     private Long id;
     private String name;
     private String email;
-    private String country;
     private LocalDate dob;
+    private String country;
+    private boolean isArtist = false;
+    private String stageName;
+    private String genre;
     @Transient
     private int age;
+    private LocalDate joinDate;
 
     public Person() {
     }
 
-    public Person(Long id, String name, String stageName, String email, String country, LocalDate dob ) {
+    public Person(Long id, LocalDate joinDate, String name, LocalDate dob, String email, String country, boolean isArtist, String stageName, String genre) {
         this.id = id;
+        this.joinDate = joinDate;
         this.name = name;
+        this.dob = dob;
         this.email = email;
         this.country = country;
-        this.dob = dob;
+        this.isArtist = isArtist;
+        this.stageName = stageName;
+        this.genre = genre;
     }
 
-    public Person(String name, String stageName, String email, String country, LocalDate dob) {
+    public Person(LocalDate joinDate, String name, LocalDate dob, String email, String country, boolean isArtist, String stageName, String genre) {
+        this.joinDate = joinDate;
         this.name = name;
+        this.dob = dob;
         this.email = email;
         this.country = country;
-        this.dob = dob;
+        this.isArtist = isArtist;
+        this.stageName = stageName;
+        this.genre = genre;
     }
+
 
     public Long getId() {
         return id;
@@ -51,6 +64,10 @@ public class Person {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public LocalDate getJoinDate() { return joinDate; }
+
+    public void setJoinDate(LocalDate joinDate) { this.joinDate = joinDate; }
 
     public String getName() {
         return name;
@@ -89,6 +106,20 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public boolean getIsArtist() { return  isArtist;}
+
+    public void setIsArtist() { this.isArtist = !isArtist;}
+
+    public String getStageName() { return stageName; }
+
+    public void setStageName(String stageName){
+        this.stageName = stageName;
+    }
+
+    public String getGenre() { return genre; }
+
+    public void setGenre(String genre) { this.genre = genre; }
 
     @Override
     public String  toString() {
