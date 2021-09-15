@@ -59,8 +59,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{username}/authorities")
-    public ResponseEntity<Object> getUser Authority(@PathVariable("username") String username) {
-
+    public ResponseEntity<Object> getUserAuthorities(@PathVariable("username") String username) {
         return ResponseEntity.ok().body(userService.getAuthorities(username));
     }
 
