@@ -1,5 +1,4 @@
 package com.dropit.backend.demo.model;
 
-public class ProfilePicture {
-
+public class CoverImg {
 }
